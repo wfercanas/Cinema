@@ -56,6 +56,7 @@ header img {
   border: 1px solid var(--gray);
   border-radius: 8px;
   cursor: default;
+  flex-shrink: 0;
 }
 
 #genres li:hover {
