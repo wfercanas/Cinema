@@ -1,3 +1,84 @@
-body {
-  background-color: red;
+:root {
+  --black: #1f2029;
+  --white: #fefefe;
+  --gray: #696a72;
+}
+
+html {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 48px 16px 0px;
+  max-width: 450px;
+}
+
+header p {
+  margin: 4px 0;
+}
+
+#username {
+  font-weight: bold;
+}
+
+header h1 {
+  color: var(--gray);
+  margin: 4px 0;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+}
+
+#categories {
+  max-width: 450px;
+  margin: 24px 16px 0;
+  overflow-x: scroll;
+}
+
+#categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+}
+
+#categories li {
+  padding: 4px 8px;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  cursor: default;
+}
+
+#categories li:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+#categories li.active {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+#trending {
+  max-width: 450px;
+  margin-top: 48px;
+}
+
+#trending h2 {
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0 16px;
+}
+
+#trending h2 span {
+  font-weight: bold;
 }
