@@ -37,13 +37,13 @@ header img {
   height: 40px;
 }
 
-#categories {
+#genres {
   max-width: 450px;
   margin: 24px 16px 0;
   overflow-x: scroll;
 }
 
-#categories ul {
+#genres ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -51,19 +51,19 @@ header img {
   gap: 12px;
 }
 
-#categories li {
+#genres li {
   padding: 4px 8px;
   border: 1px solid var(--gray);
   border-radius: 8px;
   cursor: default;
 }
 
-#categories li:hover {
+#genres li:hover {
   background-color: var(--white);
   color: var(--black);
 }
 
-#categories li.active {
+#genres li.active {
   background-color: var(--white);
   color: var(--black);
 }
