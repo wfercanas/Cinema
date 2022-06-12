@@ -83,3 +83,17 @@ header img {
 #trending h2 span {
   font-weight: bold;
 }
+
+#trending ul {
+  margin-left: 16px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+}
+
+.trending-movie img {
+  max-width: 200px;
+  height: auto;
+}
