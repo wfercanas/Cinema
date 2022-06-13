@@ -56,6 +56,3 @@ function createTrendingMovie(src, alt) {
 
   return listItem;
 }
-
-getGenres();
-getTrending();
