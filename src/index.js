@@ -14,14 +14,15 @@ async function getGenres() {
   appendToTarget(genresList, allItem);
 
   genres.forEach((genre) => {
-    const item = createGenre(genre.name);
+    const item = createGenre(genre.name, genre.id);
     appendToTarget(genresList, item);
   });
 }
 
-function createGenre(name) {
+function createGenre(name, id) {
   const listItem = document.createElement("li");
   listItem.textContent = name;
+  listItem.setAttribute("genre_id", id);
   listItem.addEventListener("click", reorderGenres);
 
   return listItem;
@@ -37,13 +38,37 @@ function reorderGenres({ target }) {
     genresList.appendChild(copyCurrentActive);
     genresList.removeChild(genresList.firstChild);
   }
-
   genresList.insertBefore(target, genresList.firstChild);
+
+  clearTrending();
+
+  if (target.textContent === "All") {
+    getAllTrending();
+    return;
+  }
+
+  getGenreTrending(target.getAttribute("genre_id"));
 }
 
-async function getTrending() {
+function clearTrending() {
+  trendingList.innerHTML = "";
+}
+
+async function getAllTrending() {
   const response = await fetch(
     `${API}${TRENDING_ENDPOINT("movie", "day")}?${API_KEY_PARAM}`
+  );
+  const { results } = await response.json();
+
+  results.forEach((movie) => {
+    const item = createTrendingMovie(movie.poster_path, movie.title, movie.id);
+    appendToTarget(trendingList, item);
+  });
+}
+
+async function getGenreTrending(genre_id) {
+  const response = await fetch(
+    `${API}${GENRE_MOVIES_ENDPOINT}?with_genres=${genre_id}&${API_KEY_PARAM}`
   );
   const { results } = await response.json();
 
@@ -70,4 +95,4 @@ function createTrendingMovie(src, alt, id) {
 }
 
 getGenres();
-getTrending();
+getAllTrending();
