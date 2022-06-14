@@ -1,7 +1,10 @@
 :root {
   --black: #1f2029;
+  --transparent-black: #1f202999;
   --white: #fefefe;
+  --transparent-white: #fefefe11;
   --gray: #696a72;
+  --yellow: #ffdc64;
 }
 
 html {
