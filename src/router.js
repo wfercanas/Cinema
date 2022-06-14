@@ -22,9 +22,13 @@ function navigate() {
     return;
   }
 
+  homePage();
+}
+
+const homePage = () => {
   getGenres();
   getTrending();
-}
+};
 
 const searchPage = () => {
   console.log("search");
