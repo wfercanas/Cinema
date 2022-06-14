@@ -6,3 +6,7 @@ const GENRES_ENDPOINT = "/genre/movie/list";
 const TRENDING_ENDPOINT = (media_type, time_window) => {
   return `/trending/${media_type}/${time_window}`;
 };
+
+const MOVIE_ENDPOINT = (movie_id) => {
+  return `/movie/${movie_id}`;
+};
