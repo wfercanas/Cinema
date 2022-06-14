@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <link rel="stylesheet" href="../styles/movie.css" />
+    <script src="../src/utils/secrets.js"></script>
+    <script src="../src/utils/api.js"></script>
+    <script src="../src/movie.js" defer></script>
+    <title>Cinema - Movie</title>
+  </head>
+  <body>
+    <main>
+      <a id="return" href="">
+        <img src="../assets/left-arrow.png" alt="left arrow" />
+      </a>
+      <section>
+        <img id="movie-poster" src="" alt="" />
+      </section>
+      <section id="movie-details">
+        <div>
+          <h1 id="movie-title"></h1>
+          <div>
+            <img src="../assets/star.png" alt="bright star" />
+            <p id="movie-rating"></p>
+          </div>
+        </div>
+        <p id="movie-description"></p>
+        <ul id="movie-genres-list">
+          <li class="movie-genre">Romance</li>
+        </ul>
+        <div id="related-movies">
+          <p>Related Movies</p>
+          <ul id="related-movies-list">
+            <li class="related-movie"></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
