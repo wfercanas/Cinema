@@ -1,9 +1,17 @@
 const genresList = document.querySelector("#genres ul");
 const trendingList = document.querySelector("#trending ul");
 
+function appendToTarget(target, element) {
+  target.appendChild(element);
+}
+
 async function getGenres() {
   const response = await fetch(`${API}${GENRES_ENDPOINT}?${API_KEY_PARAM}`);
   const { genres } = await response.json();
+
+  const allItem = createGenre("All");
+  allItem.classList.add("active");
+  appendToTarget(genresList, allItem);
 
   genres.forEach((genre) => {
     const item = createGenre(genre.name);
@@ -14,12 +22,23 @@ async function getGenres() {
 function createGenre(name) {
   const listItem = document.createElement("li");
   listItem.textContent = name;
+  listItem.addEventListener("click", reorderGenres);
 
   return listItem;
 }
 
-function appendToTarget(target, element) {
-  target.appendChild(element);
+function reorderGenres({ target }) {
+  const currentActive = document.querySelector(".active");
+  currentActive.classList.remove("active");
+  const copyCurrentActive = currentActive.cloneNode(true);
+  target.classList.add("active");
+
+  if (genresList.firstChild.textContent !== "All") {
+    genresList.appendChild(copyCurrentActive);
+    genresList.removeChild(genresList.firstChild);
+  }
+
+  genresList.insertBefore(target, genresList.firstChild);
 }
 
 async function getTrending() {
