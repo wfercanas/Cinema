@@ -48,3 +48,6 @@ function createTrendingMovie(src, alt, id) {
 
   return listItem;
 }
+
+getGenres();
+getTrending();
