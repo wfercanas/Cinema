@@ -1,0 +1,15 @@
+:root {
+  --black: #1f2029;
+  --white: #fefefe;
+  --gray: #696a72;
+}
+
+html {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 16px;
+}

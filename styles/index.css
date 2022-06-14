@@ -1,19 +1,7 @@
-:root {
-  --black: #1f2029;
-  --white: #fefefe;
-  --gray: #696a72;
-}
-
-html {
-  background-color: var(--black);
-  color: var(--white);
-  font-family: sans-serif;
-}
-
 header {
   display: flex;
   gap: 16px;
-  margin: 48px 16px 0px;
+  margin-top: 48px;
 }
 
 header p {
@@ -37,7 +25,7 @@ header img {
 }
 
 #search {
-  margin: 48px 16px 24px;
+  margin: 48px 0 24px;
 }
 
 #search div {
@@ -66,7 +54,7 @@ header img {
 }
 
 #genres {
-  margin: 24px 16px 0;
+  margin-top: 24px;
   overflow-x: scroll;
 }
 
@@ -103,7 +91,6 @@ header img {
 #trending h2 {
   font-weight: normal;
   font-size: 16px;
-  margin: 0 16px;
 }
 
 #trending h2 span {
@@ -111,7 +98,6 @@ header img {
 }
 
 #trending ul {
-  margin-left: 16px;
   list-style: none;
   padding: 24px 0;
   display: flex;
