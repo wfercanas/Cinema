@@ -28,12 +28,12 @@ async function getTrending() {
 
   const trendingList = document.querySelector("#trending ul");
   results.forEach((movie) => {
-    const item = createTrendingMovie(movie.poster_path, movie.title);
+    const item = createTrendingMovie(movie.poster_path, movie.title, movie.id);
     appendToTarget(trendingList, item);
   });
 }
 
-function createTrendingMovie(src, alt) {
+function createTrendingMovie(src, alt, id) {
   const listItem = document.createElement("li");
   const anchor = document.createElement("a");
   const image = document.createElement("img");
@@ -41,7 +41,7 @@ function createTrendingMovie(src, alt) {
   image.src = `${IMAGES_API}${src}`;
   image.alt = alt;
   anchor.classList.add("trending-movie");
-  anchor.href = "../pages/movie.html";
+  anchor.href = `../pages/movie.html?movie=${id}`;
 
   anchor.appendChild(image);
   listItem.appendChild(anchor);
