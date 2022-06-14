@@ -74,11 +74,6 @@ header img {
   flex-shrink: 0;
 }
 
-#genres li:hover {
-  background-color: var(--white);
-  color: var(--black);
-}
-
 #genres li.active {
   background-color: var(--white);
   color: var(--black);
