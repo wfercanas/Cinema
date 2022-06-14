@@ -1,7 +1,7 @@
 const movieTitle = document.querySelector("#movie-title");
 const movieRating = document.querySelector("#movie-rating");
 const movieDescription = document.querySelector("#movie-description");
-const moviePoster = document.querySelector("#movie-poster");
+const moviePoster = document.querySelector("#movie-poster img");
 const movieGenresList = document.querySelector("#movie-genres-list");
 
 function getMovieId() {
