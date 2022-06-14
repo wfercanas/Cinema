@@ -12,9 +12,8 @@ html {
 
 header {
   display: flex;
-  justify-content: space-between;
+  gap: 16px;
   margin: 48px 16px 0px;
-  max-width: 450px;
 }
 
 header p {
@@ -39,7 +38,6 @@ header img {
 
 #search {
   margin: 48px 16px 24px;
-  max-width: 450px;
 }
 
 #search div {
@@ -68,7 +66,6 @@ header img {
 }
 
 #genres {
-  max-width: 450px;
   margin: 24px 16px 0;
   overflow-x: scroll;
 }
@@ -100,7 +97,6 @@ header img {
 }
 
 #trending {
-  max-width: 450px;
   margin-top: 64px;
 }
 
