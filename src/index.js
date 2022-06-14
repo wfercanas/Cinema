@@ -1,8 +1,10 @@
+const genresList = document.querySelector("#genres ul");
+const trendingList = document.querySelector("#trending ul");
+
 async function getGenres() {
   const response = await fetch(`${API}${GENRES_ENDPOINT}?${API_KEY_PARAM}`);
   const { genres } = await response.json();
 
-  const genresList = document.querySelector("#genres ul");
   genres.forEach((genre) => {
     const item = createGenre(genre.name);
     appendToTarget(genresList, item);
@@ -26,7 +28,6 @@ async function getTrending() {
   );
   const { results } = await response.json();
 
-  const trendingList = document.querySelector("#trending ul");
   results.forEach((movie) => {
     const item = createTrendingMovie(movie.poster_path, movie.title, movie.id);
     appendToTarget(trendingList, item);
