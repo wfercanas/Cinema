@@ -35,15 +35,16 @@ async function getTrending() {
 
 function createTrendingMovie(src, alt) {
   const listItem = document.createElement("li");
-  const article = document.createElement("article");
+  const anchor = document.createElement("a");
   const image = document.createElement("img");
 
   image.src = `${IMAGES_API}${src}`;
   image.alt = alt;
-  article.classList.add("trending-movie");
+  anchor.classList.add("trending-movie");
+  anchor.href = "../pages/movie.html";
 
-  article.appendChild(image);
-  listItem.appendChild(article);
+  anchor.appendChild(image);
+  listItem.appendChild(anchor);
 
   return listItem;
 }
