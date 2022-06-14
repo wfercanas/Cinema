@@ -101,7 +101,7 @@ header img {
 
 #trending {
   max-width: 450px;
-  margin-top: 48px;
+  margin-top: 64px;
 }
 
 #trending h2 {
@@ -117,10 +117,18 @@ header img {
 #trending ul {
   margin-left: 16px;
   list-style: none;
-  padding: 0;
+  padding: 24px 0;
   display: flex;
   gap: 16px;
   overflow-x: scroll;
+}
+
+#trending li {
+  transition: transform 0.5s ease-in;
+}
+
+#trending li:hover {
+  transform: scale(1.1);
 }
 
 .trending-movie img {
