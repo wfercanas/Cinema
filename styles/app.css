@@ -37,6 +37,36 @@ header img {
   height: 40px;
 }
 
+#search {
+  margin: 48px 16px 24px;
+  max-width: 450px;
+}
+
+#search div {
+  display: flex;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #696a7244;
+}
+
+#search img {
+  max-width: 16px;
+  height: 16px;
+}
+
+#search input {
+  background-color: transparent;
+  border: none;
+  padding-left: 24px;
+  width: calc(450px - 24px - 16px);
+  color: var(--white);
+  outline: none;
+}
+
+#search input::placeholder {
+  color: var(--white);
+}
+
 #genres {
   max-width: 450px;
   margin: 24px 16px 0;
