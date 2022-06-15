@@ -1,8 +1,29 @@
 const genresList = document.querySelector("#genres ul");
-const trendingList = document.querySelector("#trending ul");
+const trendingList = document.querySelector("#movies ul");
+const inputForm = document.querySelector("input");
 
 function appendToTarget(target, element) {
   target.appendChild(element);
+}
+
+inputForm.addEventListener("keyup", search);
+async function search(event) {
+  if (event.keyCode === 13) {
+    const response = await fetch(
+      `${API}${SEARCH_ENDPOINT}?query=${event.target.value}&${API_KEY_PARAM}`
+    );
+    const { results } = await response.json();
+
+    clearMovies();
+    results.forEach((movie) => {
+      const item = createTrendingMovie(
+        movie.poster_path,
+        movie.title,
+        movie.id
+      );
+      appendToTarget(trendingList, item);
+    });
+  }
 }
 
 async function getGenres() {
@@ -31,7 +52,6 @@ function createGenre(name, id) {
 function reorderGenres({ target }) {
   const currentActive = document.querySelector(".active");
   currentActive.classList.remove("active");
-  console.log(target, currentActive);
   target.classList.add("active");
 
   if (genresList.firstChild.textContent !== "All") {
@@ -39,7 +59,7 @@ function reorderGenres({ target }) {
   }
   genresList.insertBefore(target, genresList.firstChild);
 
-  clearTrending();
+  clearMovies();
 
   if (target.textContent === "All") {
     getAllTrending();
@@ -49,7 +69,7 @@ function reorderGenres({ target }) {
   getGenreTrending(target.getAttribute("genre_id"));
 }
 
-function clearTrending() {
+function clearMovies() {
   trendingList.innerHTML = "";
 }
 
@@ -84,7 +104,7 @@ function createTrendingMovie(src, alt, id) {
 
   image.src = `${IMAGES_API}${src}`;
   image.alt = alt;
-  anchor.classList.add("trending-movie");
+  anchor.classList.add("movie");
   anchor.href = `../pages/movie.html?movie=${id}`;
 
   anchor.appendChild(image);
