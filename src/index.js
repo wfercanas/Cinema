@@ -31,12 +31,11 @@ function createGenre(name, id) {
 function reorderGenres({ target }) {
   const currentActive = document.querySelector(".active");
   currentActive.classList.remove("active");
-  const copyCurrentActive = currentActive.cloneNode(true);
+  console.log(target, currentActive);
   target.classList.add("active");
 
   if (genresList.firstChild.textContent !== "All") {
-    genresList.appendChild(copyCurrentActive);
-    genresList.removeChild(genresList.firstChild);
+    genresList.appendChild(genresList.firstChild);
   }
   genresList.insertBefore(target, genresList.firstChild);
 
