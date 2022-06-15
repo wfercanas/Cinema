@@ -29,7 +29,9 @@ header img {
 }
 
 #search div {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 16px;
+  column-gap: 8px;
   align-items: center;
   padding: 8px 16px;
   border-radius: 8px;
@@ -44,10 +46,9 @@ header img {
 #search input {
   background-color: transparent;
   border: none;
-  padding-left: 24px;
-  width: calc(450px - 24px - 16px);
   color: var(--white);
   outline: none;
+  font-size: 16px;
 }
 
 #search input::placeholder {
@@ -81,20 +82,20 @@ header img {
   color: var(--black);
 }
 
-#trending {
+#movies {
   margin-top: 48px;
 }
 
-#trending h2 {
+#movies h2 {
   font-weight: normal;
   font-size: 16px;
 }
 
-#trending h2 span {
+#movies h2 span {
   font-weight: bold;
 }
 
-#trending ul {
+#movies ul {
   list-style: none;
   padding: 8px 0;
   display: flex;
@@ -103,7 +104,7 @@ header img {
   min-height: 300px;
 }
 
-#trending li {
+#movies li {
   transition: transform 0.5s ease-in;
 }
 
@@ -111,7 +112,7 @@ header img {
   transform: scale(1.1);
 } */
 
-.trending-movie img {
+.movie img {
   max-width: 200px;
-  height: auto;
+  max-height: 300px;
 }
