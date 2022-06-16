@@ -101,3 +101,44 @@ body {
   max-width: 200px;
   max-height: 300px;
 }
+
+@media screen and (min-width: 500px) and (orientation: portrait) {
+  #movie-poster {
+    max-height: 450px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #movie-poster img {
+    object-fit: contain;
+  }
+
+  #related-movies-list img {
+    max-width: 100px;
+    max-height: 150px;
+  }
+}
+
+@media screen and (min-width: 500px) and (orientation: landscape) {
+  main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  #movie-details {
+    margin: 32px;
+  }
+
+  .movie-metadata {
+    margin: 32px 0;
+  }
+
+  #related-movies {
+    margin-top: 64px;
+  }
+
+  #related-movies-list img {
+    max-width: 100px;
+    max-height: 150px;
+  }
+}
