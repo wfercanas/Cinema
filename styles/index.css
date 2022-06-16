@@ -116,3 +116,40 @@ header img {
   max-width: 200px;
   max-height: 300px;
 }
+
+@media screen and (min-width: 700px) {
+  .movie img {
+    max-width: 300px;
+    max-height: 450px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+  }
+
+  main {
+    grid-column: 1 / span 2;
+  }
+
+  #search {
+    max-width: 500px;
+    justify-self: flex-end;
+  }
+
+  #genres {
+    max-width: 100vw;
+  }
+
+  #genres ul {
+    flex-wrap: wrap;
+  }
+
+  #movies ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
