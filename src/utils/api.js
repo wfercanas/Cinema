@@ -12,3 +12,7 @@ const TRENDING_ENDPOINT = (media_type, time_window) => {
 const MOVIE_ENDPOINT = (movie_id) => {
   return `/movie/${movie_id}`;
 };
+
+const RECOMMENDATIONS_ENDPOINT = (movie_id) => {
+  return `/movie/${movie_id}/recommendations`;
+};
