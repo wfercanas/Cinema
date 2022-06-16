@@ -84,3 +84,20 @@ body {
   flex-shrink: 0;
   cursor: default;
 }
+
+#related-movies span {
+  font-weight: bold;
+}
+
+#related-movies-list {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0 0 8px;
+  overflow-x: scroll;
+}
+
+#related-movies-list img {
+  max-width: 200px;
+  max-height: 300px;
+}
